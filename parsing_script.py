@@ -13,7 +13,7 @@ def get_stats(text_lines: str, msg_type: str):
 
     unique_msgs = set(all_messages)
     msgs_count = {msg:all_messages.count(msg) for msg in unique_msgs}
-    sorted_msgs = sorted(msgs_count, reverse=True)
+    sorted_msgs = sorted(msgs_count, reverse=True, key=msgs_count.get)
 
     return sorted_msgs, msgs_count
 
